@@ -30,7 +30,7 @@ public class Solution {
         System.out.println("Solution.main");
         int[] sd = {4,9,9,9};
         //int[] sd21 = {4,2,6,2};
-        System.out.println(Arrays.toString(plusOne2(sd)));
+        System.out.println(Arrays.toString(plusOne(sd)));
     }
 
     /**
@@ -41,7 +41,6 @@ public class Solution {
     public static int[] plusOne(int[] digits) {
         int[] ret = digits;
         int s = 0;//上一循环取商的数字，如果不为0要加到当前数字后再计算
-        int y = 0;//
         for(int i=digits.length-1,len = digits.length-1;i>=0;i--){
             //获取当前循环数字
             int curr=digits[i];
@@ -55,8 +54,7 @@ public class Solution {
             }
             //curr 加一除10取商
             s = curr / 10;
-            y = curr % 10;
-            digits[i] = y;
+            digits[i] = curr % 10;
             if(i == 0 && s > 0){
                 ret = new int[digits.length + 1];
                 ret[0] = s;
